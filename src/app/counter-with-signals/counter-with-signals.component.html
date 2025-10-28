@@ -1,0 +1,26 @@
+<p>counter-with-signals works!</p>
+
+<button (click)="increment()" >add</button>
+<button (click)="decrement()" >sub</button>
+
+<p>{{result()}}</p>
+<p>{{double()}}</p>
+
+  <h2>User List</h2>
+    <ul>
+      @for (user of users; track user.id) {
+        <li>{{ user.name }} - {{ user.email }}</li>
+      } @empty {
+        <li>No users available</li>
+      }
+    </ul>
+
+    @defer (on viewport) {
+      <app-test></app-test>
+    } @placeholder {
+      <p>Chart will load when visible...</p>
+    } @loading {
+      <p>Loading chart...</p>
+    } @error {
+      <p>Failed to load chart</p>
+    }

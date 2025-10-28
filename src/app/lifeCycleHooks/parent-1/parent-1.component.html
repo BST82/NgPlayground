@@ -1,0 +1,10 @@
+<h2>Parent Component</h2>
+
+<button (click)="updateMessage()">Update Parent Message</button>
+<button (click)="destroyChild()">Destroy Child</button>
+
+@if (showChild) {
+    <app-child-1 [message]="parentMessage"></app-child-1>
+  }
+  
+ 
